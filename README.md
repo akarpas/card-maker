@@ -4,7 +4,7 @@ You can use this environment to do the test (for example, forking this repositor
 
 ## Exercise
 
-...
+### Board game cards maker
 
 ## Bonus point
 
