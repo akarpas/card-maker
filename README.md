@@ -6,7 +6,7 @@ You can use this boilerplate to do the test (for example, forking this repositor
 
 # Exercise
 
-## Board game deck maker
+## Card game maker
 
 Your mission is to build a card game maker (simple cards, invent your owns or use existing ones as [Cards Against Humanity](https://cardsagainsthumanity.com/)). The app must be able to do:
 
