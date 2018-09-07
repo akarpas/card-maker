@@ -8,10 +8,10 @@ You can use this boilerplate to do the test (for example, forking this repositor
 
 ## Board game deck maker
 
-Your mission is to build a deck maker for your board game (simple cards, invent your owns or use existing ones as [Cards Against Humanity](https://cardsagainsthumanity.com/)). The app must be able to do:
+Your mission is to build a card game maker (simple cards, invent your owns or use existing ones as [Cards Against Humanity](https://cardsagainsthumanity.com/)). The app must be able to do:
 
 - Show a detailed view of a card
-- Show a list of cards that compose your deck
+- Show a card list of your game
 - Add a new card
 - Edit an existing card
 
@@ -19,7 +19,7 @@ We would love to see each of these features implemented but you are free to add 
 
 - Export to PDF
 - Import/Export to JSON
-- Fetch a deck from a remote path (Git...)
+- Fetch cards from a remote path (Git...)
 
 # Technology
 
