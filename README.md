@@ -8,7 +8,7 @@ You can use this boilerplate to do the test (for example, forking this repositor
 
 ## Board game deck maker
 
-Your mission is to build a deck maker for your board game (simple cards, invent your owns or use existing ones as Cards Against Humanity). The app must be able to do:
+Your mission is to build a deck maker for your board game (simple cards, invent your owns or use existing ones as [Cards Against Humanity](https://cardsagainsthumanity.com/)). The app must be able to do:
 
 - Show a detailed view of a card
 - Show a list of cards that compose your deck
