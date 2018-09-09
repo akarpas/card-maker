@@ -5,7 +5,7 @@ const Container = styled.div`
   border: 1px solid white;
   border-radius: 2%;
   padding: 1vh 1vw;
-  width: 90%;
+  width: 70%;
 `
 const Form = styled.form`
   display: flex;
@@ -20,15 +20,15 @@ const Label = styled.label`
 `
 
 const TextArea = styled.textarea`
-  font-size: 30px;
+  font-size: 20px;
 `
 
 const StyledInput = styled.input`
-  font-size: 30px;
+  font-size: 20px;
 `
 
 const StyledSelect = styled.select`
-  font-size: 30px;
+  font-size: 20px;
   background-color: white;
   border-radius: 0;
 `
