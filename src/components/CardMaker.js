@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import styled from 'styled-components'
+import { connect } from "react-redux"
+import styled from "styled-components"
+import * as actions from '../actions'
 
 const Container = styled.div`
   border: 1px solid white;
@@ -49,6 +51,7 @@ class CardMaker extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
+    this.props.saveCard(this.state)
     this.setState({
       text: '',
       author: '',
@@ -104,4 +107,5 @@ class CardMaker extends Component {
   }
 }
 
-export default (CardMaker)
+
+export default connect(null, actions)(CardMaker)
