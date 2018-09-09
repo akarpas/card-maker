@@ -1,10 +1,17 @@
 import React, { Component } from "react";
+import Title from './Title'
+import CardEditor from './CardEditor'
+import CardTools from './CardTools'
+import CardList from './CardList'
 
 export default class App extends Component {
   render() {
     return (
       <div>
-        <h1>Welcome to Colvin React Coding Challenge</h1>
+        <Title />
+        <CardEditor />
+        <CardTools />
+        <CardList />
       </div>
     );
   }
