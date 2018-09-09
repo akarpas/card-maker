@@ -3,7 +3,7 @@ import { shallow } from 'enzyme'
 import ReactDOM from 'react-dom';
 import App from '../App';
 import Title from '../Title'
-import CardEditor from '../CardEditor'
+import CardEditor from '../CardMaker'
 import CardTools from '../CardTools'
 import CardList from '../CardList'
 

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Title from './Title'
-import CardEditor from './CardEditor'
+import CardMaker from './CardMaker'
 import CardTools from './CardTools'
 import CardList from './CardList'
 import styled from 'styled-components'
@@ -20,7 +20,7 @@ export default class App extends Component {
     return (
       <Wrapper>
         <Title />
-        <CardEditor />
+        <CardMaker />
         <CardTools />
         <CardList />
       </Wrapper>
