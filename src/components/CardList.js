@@ -3,13 +3,15 @@ import { connect } from "react-redux";
 
 class CardList extends Component {
   render() {
+    const { cards } = this.props
+
     return (
       <div>
         <h1>Card List</h1>
         <ul>
           {
-            this.props.cards.map(item => {
-              return <li>{item.emoji}</li>
+            cards.map((item, index) => {
+              return <li key={`${item.text}-${index}`}>{item.emoji}</li>
             })
           }
         </ul>
