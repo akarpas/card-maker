@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Title from './Title'
-import CardMaker from './CardMaker'
-import CardTools from './CardTools'
-import CardList from './CardList'
+import Title from './Title/index'
+import CardMaker from './CardMaker/index'
+import CardTools from './CardTools/index'
+import CardList from './CardList/index'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
