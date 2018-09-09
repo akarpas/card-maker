@@ -7,7 +7,7 @@ const Container = styled.div`
   border: 1px solid white;
   border-radius: 2%;
   padding: 1vh 1vw;
-  width: 70%;
+  width: 90%;
 `
 const Form = styled.form`
   display: flex;
