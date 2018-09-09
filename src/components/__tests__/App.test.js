@@ -1,9 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme'
-import ReactDOM from 'react-dom';
 import App from '../App';
 import Title from '../Title'
-import CardEditor from '../CardMaker'
+import CardMaker from '../CardMaker'
 import CardTools from '../CardTools'
 import CardList from '../CardList'
 
@@ -19,7 +18,7 @@ it('renders without crashing', () => {
 
 it('includes 4 components', () => {
   expect(wrapped.find(Title).length).toEqual(1)
-  expect(wrapped.find(CardEditor).length).toEqual(1)
+  expect(wrapped.find(CardMaker).length).toEqual(1)
   expect(wrapped.find(CardList).length).toEqual(1)
   expect(wrapped.find(CardTools).length).toEqual(1)
 })
