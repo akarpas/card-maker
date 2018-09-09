@@ -48,12 +48,12 @@ class CardMaker extends Component {
   }
 
   handleSubmit = (event) => {
+    event.preventDefault()
     this.setState({
       text: '',
       author: '',
       emoji: 'smiley'
     })
-    event.preventDefault()
   }
 
   handleChange = (event) => {
@@ -64,9 +64,10 @@ class CardMaker extends Component {
   render() {
     return (
       <Container>
-        <Form onSubmit={this.handleSubmit}>
+        <Form id="form" onSubmit={this.handleSubmit}>
           <Label>Card Text</Label>
           <TextArea
+            id="text"
             name="text"
             type="textarea"
             placeholder="Add text to your card"
