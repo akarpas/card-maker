@@ -20,8 +20,8 @@ export default class App extends Component {
     return (
       <Wrapper>
         <Title />
-        <CardMaker />
         <CardTools />
+        <CardMaker />
         <CardList />
       </Wrapper>
     );
