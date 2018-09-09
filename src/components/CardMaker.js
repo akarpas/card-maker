@@ -30,7 +30,7 @@ const StyledInput = styled.input`
 const StyledSelect = styled.select`
   font-size: 30px;
   background-color: white;
-  width: 100%;
+  border-radius: 0;
 `
 
 const Button = styled.button`
@@ -72,6 +72,7 @@ class CardMaker extends Component {
             placeholder="Add text to your card"
             value={this.state.text}
             onChange={this.handleChange}
+            required
           />
           <Label>Author</Label>
           <StyledInput
@@ -81,10 +82,12 @@ class CardMaker extends Component {
             value={this.state.author}
             onChange={this.handleChange}
             placeholder="Name"
+            required
           />
           <Label>Mood</Label>
           <StyledSelect
             name="emoji"
+            required
             component="select"
             onChange={this.handleChange}
             value={this.state.emoji}
