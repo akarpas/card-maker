@@ -4,7 +4,7 @@ export default class CardMaker extends Component {
   render() {
     return (
       <div>
-        <h1>Card Editor</h1>
+        <h1>Card Maker</h1>
       </div>
     );
   }
