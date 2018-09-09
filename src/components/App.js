@@ -1,13 +1,14 @@
 import React, { Component } from "react";
-import { Provider } from "react-redux";
-import store from "../store.js";
+import Root from '../Root'
+// import { Provider } from "react-redux";
+// import store from "../store.js";
 
 export default class App extends Component {
   render() {
     return (
-      <Provider store={store}>
+      <Root>
         <h1>Welcome to Colvin React Coding Challenge</h1>
-      </Provider>
+      </Root>
     );
   }
 }
