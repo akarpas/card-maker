@@ -6,8 +6,8 @@ import CardList from "./CardList/index"
 import CardView from "./CardView/index"
 import styled from "styled-components"
 import {
-  Route,
-  BrowserRouter
+  Switch,
+  Route
 } from "react-router-dom"
 
 const Wrapper = styled.div`
@@ -21,16 +21,15 @@ const Wrapper = styled.div`
 `
 export default class App extends Component {
   render() {
-    console.log(this.props.children)
     return (
       <Wrapper>
         <Title />
         <CardTools />
         <CardMaker />
         <CardList />
-        <BrowserRouter>
-          <Route component={CardView} path="/card"></Route>
-        </BrowserRouter>
+        <Switch>
+          <Route component={CardView} path="/card/:id"></Route>
+        </Switch>
       </Wrapper>
     );
   }
