@@ -41,7 +41,7 @@ export const Card = styled.div`
   flex-flow: column;
   align-items: center;
   justify-content: center;
-  min-width: 90%;
+  max-width: 90%;
   min-height: 90%;
   color: black;
   background-color: white;
@@ -57,6 +57,7 @@ export const CardText = styled.textarea`
   background-color: rgba(0,0,0,0.2);
   border: 1px solid rgba(0,0,0,0.5);
   text-align: center;
+  width: 90%;
   margin: 2em 0;
 `
 
