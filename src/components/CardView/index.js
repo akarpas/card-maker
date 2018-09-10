@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux"
 import {
   ModalContainer,
   ModalContent,
@@ -9,19 +10,32 @@ import {
   AuthorText,
   Emoji
 } from "./style.js"
+import * as actions from "../../actions"
 
-export default class CardView extends Component {
+class CardView extends Component {
   state = {
     text: '',
     author: '',
     emoji: '',
+    cardNumber: null,
     originalText: ''
   }
 
   componentDidMount() {
-    const { state, pathname } = this.props.location
+    const { state } = this.props.location
 
-    this.setState({ ...state, originalText: state.text })
+    this.setState({
+      ...state.card,
+      originalText: state.card.text,
+      cardNumber: state.index
+    })
+  }
+
+  handleDelete = event => {
+    event.stopPropagation()
+    this.props.deleteCard(this.state)
+    const { history } = this.props
+    history.goBack()
   }
 
   handleChange = (event) => {
@@ -47,7 +61,7 @@ export default class CardView extends Component {
             <Emoji>Mood: {emoji}</Emoji>
           </Card>
           <Controls>
-            <Control>Delete</Control>
+            <Control onClick={this.handleDelete}>Delete</Control>
             {showSave && <Control>Save</Control>}
             <Control onClick={this.back}>Close</Control>
           </Controls>
@@ -56,3 +70,6 @@ export default class CardView extends Component {
     );
   }
 }
+
+export default connect(null, actions)(CardView)
+
