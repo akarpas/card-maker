@@ -27,7 +27,7 @@ class CardTools extends Component {
       <Container>
         <Button onClick={this.clear} src={ReloadIcon}></Button>
         <Button onClick={this.load} src={SaveIcon}></Button>
-        <a href={`data:'${data}'`} download="cards.json">
+        <a href={`data:'${data}`} download="cards.json">
           <Button src={ExportIcon}></Button>
         </a>
       </Container>
