@@ -18,14 +18,25 @@ class CardTools extends Component {
   }
 
   render() {
+    const { cards } = this.props
+    const cardsJson = {...cards}
+
+    const data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(cardsJson))
+
     return (
       <Container>
         <Button onClick={this.clear} src={ReloadIcon}></Button>
         <Button onClick={this.load} src={SaveIcon}></Button>
-        <Button src={ExportIcon}></Button>
+        <a href={`data:'${data}'`} download="cards.json">
+          <Button src={ExportIcon}></Button>
+        </a>
       </Container>
     );
   }
 }
 
-export default connect(null, actions)(CardTools)
+const mapStateToProps = (state) => {
+  return { cards: state.cards }
+}
+
+export default connect(mapStateToProps, actions)(CardTools)
