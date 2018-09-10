@@ -24,7 +24,12 @@ class CardMaker extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    this.props.saveCard(this.state)
+    const { text, author, emoji } = this.state
+    this.props.saveCard({
+      text,
+      author,
+      emoji
+    })
     this.setState({
       text: "",
       author: "",
