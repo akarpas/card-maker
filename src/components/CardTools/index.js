@@ -9,12 +9,12 @@ import * as actions from "../../actions"
 class CardTools extends Component {
   clear = event => {
     event.preventDefault()
-    this.props.eraseCards(this.state)
+    this.props.eraseCards()
   }
 
   load = event => {
     event.preventDefault()
-    this.props.getCards(this.state)
+    this.props.getCards()
   }
 
   render() {
