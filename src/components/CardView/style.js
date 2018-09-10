@@ -61,6 +61,7 @@ export const CardText = styled.textarea`
   text-align: center;
   width: 90%;
   margin: 2em 0;
+  height: 30vh;
 `
 
 export const AuthorText = styled.div`

@@ -8,10 +8,10 @@ export const Container = styled.div`
   flex-flow: column;
   align-items: center;
   border: 1px solid white;
-  border-radius: 2%;
   padding: 1vh 1vw;
   margin: 2vh 0;
   width: 90%;
+  background-color: black;
 `;
 
 export const Cards = styled.div.attrs({
@@ -46,11 +46,16 @@ export const Card = styled.div.attrs({
 
 export const Line = styled.p`
   text-align: center;
+  word-wrap: break-word;
+  max-width: 200px;
+  overflow: hidden;
+  max-height: 300px;
 `
 
 export const CardLink = styled(Link)`
   display: flex;
   color: white;
+  overflow: hidden;
   text-decoration: none;
   flex-flow: row;
   justify-content: center;
@@ -59,6 +64,7 @@ export const CardLink = styled(Link)`
   padding: 20px;
   height: 250px;
   min-width: 35%;
+  max-width: 35%;
   border: 1px solid white;
   @media screen and (min-width:1000px) {
     min-width: 22%;

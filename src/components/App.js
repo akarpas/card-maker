@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   color: white;
-  background-color: black;
+  background-color: rgba(0,0,0,0.7);
 `
 export default class App extends Component {
   render() {
