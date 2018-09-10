@@ -11,8 +11,7 @@ import registerServiceWorker from "./registerServiceWorker";
 ReactDOM.render(
   <Root>
     <BrowserRouter>
-      <Route component={App} path="/">
-      </Route>
+      <Route component={App} path="/"></Route>
     </BrowserRouter>
   </Root>,
   document.getElementById("root"));
