@@ -3,7 +3,12 @@ import Title from "./Title/index"
 import CardMaker from "./CardMaker/index"
 import CardTools from "./CardTools/index"
 import CardList from "./CardList/index"
+import CardView from "./CardView/index"
 import styled from "styled-components"
+import {
+  Route,
+  BrowserRouter
+} from "react-router-dom"
 
 const Wrapper = styled.div`
   display: flex;
@@ -16,12 +21,17 @@ const Wrapper = styled.div`
 `
 export default class App extends Component {
   render() {
+    console.log(this.props.children)
     return (
       <Wrapper>
         <Title />
         <CardTools />
         <CardMaker />
         <CardList />
+        <BrowserRouter>
+          <Route component={CardView} path="/card"></Route>
+        </BrowserRouter>
+        {this.props.children}
       </Wrapper>
     );
   }
