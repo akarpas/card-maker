@@ -3,7 +3,12 @@ import Title from "./Title/index"
 import CardMaker from "./CardMaker/index"
 import CardTools from "./CardTools/index"
 import CardList from "./CardList/index"
+import CardView from "./CardView/index"
 import styled from "styled-components"
+import {
+  Switch,
+  Route
+} from "react-router-dom"
 
 const Wrapper = styled.div`
   display: flex;
@@ -12,7 +17,7 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   color: white;
-  background-color: black;
+  background-color: rgba(0,0,0,0.7);
 `
 export default class App extends Component {
   render() {
@@ -22,6 +27,9 @@ export default class App extends Component {
         <CardTools />
         <CardMaker />
         <CardList />
+        <Switch>
+          <Route component={CardView} path="/card/:id"></Route>
+        </Switch>
       </Wrapper>
     );
   }

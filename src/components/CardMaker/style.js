@@ -33,13 +33,13 @@ import styled from "styled-components"
 
  export const Container = styled.div`
   border: 1px solid white;
-  border-radius: 2%;
   padding: 1vh 1vw;
   width: 90%;
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
+  background-color: black;
 `
 
  export const Form = styled.form`
