@@ -11,7 +11,7 @@ class CardList extends Component {
         <h1>Your Cards</h1>
         <Cards>
           {
-            cards.map((item, index) => {
+            cards.slice(0).reverse().map((item, index) => {
               return (
                 <CardLink to={{
                   pathname: `/card/${index}`,
