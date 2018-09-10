@@ -11,11 +11,17 @@ class CardTools extends Component {
     event.preventDefault()
     this.props.eraseCards(this.state)
   }
+
+  load = event => {
+    event.preventDefault()
+    this.props.getCards(this.state)
+  }
+
   render() {
     return (
       <Container>
         <Button onClick={this.clear} src={ReloadIcon}></Button>
-        <Button src={SaveIcon}></Button>
+        <Button onClick={this.load} src={SaveIcon}></Button>
         <Button src={ExportIcon}></Button>
       </Container>
     );
