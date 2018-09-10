@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, BrowserRouter } from "react-router-dom"
+import { Route, BrowserRouter, Switch } from "react-router-dom"
 import App from "../App";
 import Title from "../Title"
 import CardMaker from "../CardMaker"
@@ -24,9 +24,10 @@ it("renders without crashing", () => {
   wrapped.render()
 });
 
-it("includes 4 components", () => {
+it("includes 4 components and 1 switch", () => {
   expect(wrapped.find(Title).length).toEqual(1)
   expect(wrapped.find(CardMaker).length).toEqual(1)
   expect(wrapped.find(CardList).length).toEqual(1)
   expect(wrapped.find(CardTools).length).toEqual(1)
+  expect(wrapped.find(Switch).length).toEqual(1)
 })
