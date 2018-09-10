@@ -47,7 +47,7 @@ export const Card = styled.div.attrs({
 export const Line = styled.p`
   text-align: center;
   word-wrap: break-word;
-  max-width: 200px;
+  width: 200px;
   overflow: hidden;
   max-height: 300px;
 `
