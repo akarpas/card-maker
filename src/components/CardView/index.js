@@ -38,6 +38,13 @@ class CardView extends Component {
     history.goBack()
   }
 
+  handleSave = event => {
+    event.stopPropagation()
+    this.props.editCard(this.state)
+    const { history } = this.props
+    history.goBack()
+  }
+
   handleChange = (event) => {
     event.preventDefault()
     this.setState({ text: event.target.value })
@@ -62,7 +69,7 @@ class CardView extends Component {
           </Card>
           <Controls>
             <Control onClick={this.handleDelete}>Delete</Control>
-            {showSave && <Control>Save</Control>}
+            {showSave && <Control onClick={this.handleSave}>Save</Control>}
             <Control onClick={this.back}>Close</Control>
           </Controls>
         </ModalContent>
