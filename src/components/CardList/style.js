@@ -50,6 +50,8 @@ export const Line = styled.p`
 
 export const CardLink = styled(Link)`
   display: flex;
+  color: white;
+  text-decoration: none;
   flex-flow: row;
   justify-content: center;
   align-items: center;
