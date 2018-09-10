@@ -11,16 +11,17 @@ class CardList extends Component {
         <h1>Your Cards</h1>
         <Cards>
           {
-            cards.slice(0).reverse().map((item, index) => {
+            cards.slice(0).reverse().map((card, index) => {
+              const cardNumber = cards.length - 1 - index
               return (
                 <CardLink to={{
-                  pathname: `/card/${index}`,
+                  pathname: `/card/${cardNumber}`,
                   state: {
-                    card: cards[index],
-                    index
+                    card: cards[cardNumber],
+                    index: cardNumber
                   }
-                }} id={index} key={`${index}-link`}>
-                    <Line>{item.text}</Line>
+                }} id={cardNumber} key={`${cardNumber}-link`}>
+                    <Line>{card.text}</Line>
                 </CardLink>
               )
             })
