@@ -1,4 +1,7 @@
 import styled from "styled-components"
+import {
+  Link
+} from "react-router-dom"
 
 export const Container = styled.div`
   display: flex;
@@ -44,3 +47,21 @@ export const Card = styled.div.attrs({
 export const Line = styled.p`
   text-align: center;
 `
+
+export const CardLink = styled(Link)`
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 20px;
+  height: 250px;
+  min-width: 35%;
+  border: 1px solid white;
+  @media screen and (min-width:1000px) {
+    min-width: 22%;
+  }
+  @media screen and (min-width:1600px) {
+    min-width: 10%;
+  }
+`;

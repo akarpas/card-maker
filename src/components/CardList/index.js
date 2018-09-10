@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Container, Cards, Card, Line } from "./style"
+import { Container, Cards, Card, Line, CardLink } from "./style"
 
 class CardList extends Component {
   render() {
@@ -13,11 +13,9 @@ class CardList extends Component {
           {
             cards.map((item, index) => {
               return (
-                <Card
-                  id={index}
-                  key={`${item.text}-${index}`}>
-                  <Line>{item.text}</Line>
-                </Card>
+                <CardLink to={`/card/${index}`} id={index} key={`${index}-link`}>
+                    <Line>{item.text}</Line>
+                </CardLink>
               )
             })
           }
