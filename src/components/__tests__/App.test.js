@@ -1,4 +1,5 @@
 import React from "react";
+import { Route, BrowserRouter } from "react-router-dom"
 import App from "../App";
 import Title from "../Title"
 import CardMaker from "../CardMaker"
@@ -12,7 +13,9 @@ let wrapped
 beforeEach(() => {
   wrapped = mount(
     <Root>
-      <App />
+      <BrowserRouter>
+        <Route component={App} path="/"/>
+      </BrowserRouter>
     </Root>
   )
 })
