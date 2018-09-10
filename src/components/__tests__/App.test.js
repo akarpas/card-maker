@@ -1,15 +1,20 @@
 import React from 'react';
-import { shallow } from 'enzyme'
 import App from '../App';
 import Title from '../Title'
 import CardMaker from '../CardMaker'
 import CardTools from '../CardTools'
 import CardList from '../CardList'
+import { mount } from 'enzyme'
+import Root from '../../Root'
 
 let wrapped
 
 beforeEach(() => {
-  wrapped = shallow(<App />)
+  wrapped = mount(
+    <Root>
+      <App />
+    </Root>
+  )
 })
 
 it('renders without crashing', () => {
