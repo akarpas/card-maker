@@ -39,7 +39,7 @@ export default class CardView extends Component {
     const { text, author, emoji, originalText } = this.state
     const showSave = originalText !== text
     return (
-      <ModalContainer onClick={this.back}>
+      <ModalContainer>
         <ModalContent>
           <Card>
             <CardText value={text} onChange={this.handleChange}/>
