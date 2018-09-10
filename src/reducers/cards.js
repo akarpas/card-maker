@@ -1,7 +1,6 @@
 import { SAVE_CARD, DELETE_CARD, EDIT_CARD } from "../actions/types"
 
 const deleteCard = (state, data) => {
-  console.warn("STATE ", state[0])
   if (state.length === 1) {
     return ([])
   }
