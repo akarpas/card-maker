@@ -26,7 +26,8 @@ export const Controls = styled.div`
   flex-flow: row;
   align-items: center;
   justify-content: space-between;
-  min-width: 90%;
+  max-width: 90%;
+  min-width: 50%;
   height: auto;
   color: black;
   background-color: white;
@@ -42,6 +43,7 @@ export const Card = styled.div`
   align-items: center;
   justify-content: center;
   max-width: 90%;
+  min-width: 50%;
   min-height: 90%;
   color: black;
   background-color: white;
