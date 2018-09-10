@@ -13,7 +13,10 @@ class CardList extends Component {
           {
             cards.map((item, index) => {
               return (
-                <CardLink to={`/card/${index}`} id={index} key={`${index}-link`}>
+                <CardLink to={{
+                  pathname: `/card/${index}`,
+                  state: cards
+                }} id={index} key={`${index}-link`}>
                     <Line>{item.text}</Line>
                 </CardLink>
               )
