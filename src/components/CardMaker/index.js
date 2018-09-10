@@ -9,16 +9,16 @@ import {
   StyledSelect,
   Form,
   Button
-} from './style'
+} from "./style"
 import ExpandLessIcon from "../../assets/expandLess.png"
 import ExpandMoreIcon from "../../assets/expandMore.png"
-import * as actions from '../../actions'
+import * as actions from "../../actions"
 
 class CardMaker extends Component {
   state = {
-    text: '',
-    author: '',
-    emoji: 'smiley',
+    text: "",
+    author: "",
+    emoji: "smiley",
     open: true
   }
 
@@ -26,9 +26,9 @@ class CardMaker extends Component {
     event.preventDefault()
     this.props.saveCard(this.state)
     this.setState({
-      text: '',
-      author: '',
-      emoji: 'smiley'
+      text: "",
+      author: "",
+      emoji: "smiley"
     })
   }
 

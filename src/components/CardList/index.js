@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Container, Cards, Card, Line } from './style'
+import { Container, Cards, Card, Line } from "./style"
 
 class CardList extends Component {
   render() {

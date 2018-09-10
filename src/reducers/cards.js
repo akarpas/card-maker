@@ -1,4 +1,4 @@
-import { SAVE_CARD } from '../actions/types'
+import { SAVE_CARD } from "../actions/types"
 
 export default function(state = [], action) {
   switch(action.type) {
