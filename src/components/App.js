@@ -31,7 +31,6 @@ export default class App extends Component {
         <BrowserRouter>
           <Route component={CardView} path="/card"></Route>
         </BrowserRouter>
-        {this.props.children}
       </Wrapper>
     );
   }
