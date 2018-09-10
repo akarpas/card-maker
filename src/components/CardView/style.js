@@ -26,8 +26,8 @@ export const Card = styled.div`
   flex-flow: column;
   align-items: center;
   justify-content: center;
-  min-width: 50%;
-  min-height: 80%;
+  min-width: 90%;
+  min-height: 90%;
   color: black;
   background-color: white;
 `
