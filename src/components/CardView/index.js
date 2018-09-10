@@ -14,14 +14,14 @@ export default class CardView extends Component {
   state = {
     text: '',
     author: '',
-    emoji: ''
+    emoji: '',
+    originalText: ''
   }
 
   componentDidMount() {
     const { state, pathname } = this.props.location
-    const cardNumber = pathname.split('/')[2]
 
-    this.setState({ ...state })
+    this.setState({ ...state, originalText: state.text })
   }
 
   handleChange = (event) => {
@@ -29,10 +29,17 @@ export default class CardView extends Component {
     this.setState({ text: event.target.value })
   }
 
+  back = event => {
+    event.stopPropagation()
+    const { history } = this.props
+    history.goBack()
+  }
+
   render() {
-    const { text, author, emoji } = this.state
+    const { text, author, emoji, originalText } = this.state
+    const showSave = originalText !== text
     return (
-      <ModalContainer>
+      <ModalContainer onClick={this.back}>
         <ModalContent>
           <Card>
             <CardText value={text} onChange={this.handleChange}/>
@@ -41,8 +48,8 @@ export default class CardView extends Component {
           </Card>
           <Controls>
             <Control>Delete</Control>
-            <Control>Save</Control>
-            <Control>Close</Control>
+            {showSave && <Control>Save</Control>}
+            <Control onClick={this.back}>Close</Control>
           </Controls>
         </ModalContent>
       </ModalContainer>
