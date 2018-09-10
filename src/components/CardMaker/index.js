@@ -52,9 +52,7 @@ class CardMaker extends Component {
           <Form id="form" onSubmit={this.handleSubmit}>
             <Label>Card Text</Label>
             <TextArea
-              id="text"
               name="text"
-              type="textarea"
               placeholder="Add text to your card"
               value={this.state.text}
               onChange={this.handleChange}
@@ -64,7 +62,6 @@ class CardMaker extends Component {
             <StyledInput
               name="author"
               component="input"
-              type="text"
               value={this.state.author}
               onChange={this.handleChange}
               placeholder="Name"
