@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter, Link } from "react-router-dom";
 import Root from "../../Root"
 import { mount } from "enzyme"
 import CardList from "../CardList/index.js"
@@ -22,7 +23,9 @@ beforeEach(() => {
   }
   wrapped = mount(
     <Root initialState={initialState}>
-      <CardList />
+      <BrowserRouter>
+        <CardList />
+      </BrowserRouter>
     </Root>
   )
 })
@@ -38,7 +41,7 @@ it("renders without crashing", () => {
 
 describe("lists the cards", () => {
   it("creates two cards", () => {
-    expect(wrapped.find(".card").length).toEqual(2)
+    expect(wrapped.find(Link).length).toEqual(2)
   })
 
   it("creates two titles with correct text", () => {
