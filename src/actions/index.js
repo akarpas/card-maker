@@ -2,7 +2,8 @@ import {
   SAVE_CARD,
   DELETE_CARD,
   EDIT_CARD,
-  ERASE_CARDS
+  ERASE_CARDS,
+  GET_CARDS
 } from './types'
 
 export function saveCard(data) {
@@ -30,5 +31,12 @@ export function eraseCards(cardNumber) {
   return {
     type: ERASE_CARDS,
     payload: cardNumber
+  }
+}
+
+export function getCards() {
+  return {
+    type: GET_CARDS,
+    payload: null
   }
 }

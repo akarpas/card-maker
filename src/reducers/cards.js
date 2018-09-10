@@ -1,4 +1,5 @@
-import { SAVE_CARD, DELETE_CARD, EDIT_CARD, ERASE_CARDS } from "../actions/types"
+import { SAVE_CARD, DELETE_CARD, EDIT_CARD, ERASE_CARDS, GET_CARDS } from "../actions/types"
+import CardsJSON from "../assets/quotes.json"
 
 const deleteCard = (state, data) => {
   if (state.length === 1) {
@@ -23,6 +24,9 @@ export default function(state = [], action) {
       return editCard(state, action.payload)
     case ERASE_CARDS:
       return []
+    case GET_CARDS:
+      const { cards } = CardsJSON
+      return cards
     default:
       return state
   }
