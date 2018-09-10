@@ -11,7 +11,9 @@ export const Container = styled.div`
   width: 90%;
 `;
 
-export const Cards = styled.div`
+export const Cards = styled.div.attrs({
+  className: "cards",
+})`
   width: 100%;
   display: flex;
   align-items: center;
@@ -19,7 +21,9 @@ export const Cards = styled.div`
   flex-wrap: wrap;
 `;
 
-export const Card = styled.div`
+export const Card = styled.div.attrs({
+  className: "card",
+})`
   display: flex;
   flex-flow: row;
   justify-content: center;
