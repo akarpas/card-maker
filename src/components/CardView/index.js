@@ -21,7 +21,7 @@ export default class CardView extends Component {
     const { state, pathname } = this.props.location
     const cardNumber = pathname.split('/')[2]
 
-    this.setState({ ...state[cardNumber] })
+    this.setState({ ...state })
   }
 
   handleChange = (event) => {

@@ -15,7 +15,7 @@ class CardList extends Component {
               return (
                 <CardLink to={{
                   pathname: `/card/${index}`,
-                  state: cards
+                  state: cards[index]
                 }} id={index} key={`${index}-link`}>
                     <Line>{item.text}</Line>
                 </CardLink>
