@@ -95,3 +95,10 @@ export const Button = styled.img`
     background-color: grey;
   }
 `
+
+export const Buttons = styled.div`
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+`

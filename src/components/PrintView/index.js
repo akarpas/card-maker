@@ -1,23 +1,27 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Container, Cards, Line, Card, Button, Overlay } from "./style"
+import { Container, Cards, Line, Card, Button, Overlay, Buttons } from "./style"
 import SaveIcon from "../../assets/save.png"
+import CloseIcon from "../../assets/close.png"
 import html2canvas from "html2canvas"
 import jsPDF from "jspdf"
 
 class PrintView extends Component {
   print = () => {
     const input = document.getElementById('divToPrint');
-    console.warn(input.attributes)
     html2canvas(input)
       .then((canvas) => {
-        console.warn(canvas)
         const imgData = canvas.toDataURL('image/png');
         const pdf = new jsPDF();
         pdf.addImage(imgData, 'JPEG', 0, 0);
         pdf.save("download.pdf");
-      })
-    ;
+      });
+  }
+
+  back = event => {
+    event.stopPropagation()
+    const { history } = this.props
+    history.goBack()
   }
 
   render() {
@@ -25,7 +29,10 @@ class PrintView extends Component {
     return (
       <Overlay>
         <Container>
-          <Button onClick={this.print} src={SaveIcon}></Button>
+          <Buttons>
+            <Button onClick={this.print} src={SaveIcon}></Button>
+            <Button onClick={this.back} src={CloseIcon}></Button>
+          </Buttons>
           {cards &&
             (<Cards id="divToPrint">
               {
