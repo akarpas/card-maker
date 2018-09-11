@@ -18,6 +18,22 @@ const Wrapper = styled.div`
   height: 100%;
   color: white;
   background-color: rgba(0,0,0,0.7);
+  @media screen and (min-width:1200px) {
+    height: 100vh;
+  }
+`
+
+const CardContent = styled.div`
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: white;
+  @media screen and (min-width:1200px) {
+    flex-flow: row;
+    height: auto;
+  }
 `
 export default class App extends Component {
   render() {
@@ -25,8 +41,10 @@ export default class App extends Component {
       <Wrapper>
         <Title />
         <CardTools />
-        <CardMaker />
-        <CardList />
+        <CardContent>
+          <CardMaker />
+          <CardList />
+        </CardContent>
         <Switch>
           <Route component={CardView} path="/card/:id"></Route>
         </Switch>

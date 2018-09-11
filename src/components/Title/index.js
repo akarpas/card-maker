@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { Header } from "./style"
+import { Header, H1 } from "./style"
 export default class Title extends Component {
   render() {
     return (
       <Header>
-        <h1>The Card Game Maker</h1>
+        <H1>The Card Game Maker</H1>
       </Header>
     );
   }
