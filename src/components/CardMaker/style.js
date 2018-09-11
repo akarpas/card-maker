@@ -30,6 +30,7 @@ import styled from "styled-components"
 `
 
  export const Button = styled.button`
+  cursor: pointer;
   border: 2px solid white;
   background-color: grey;
   padding: 10px;
