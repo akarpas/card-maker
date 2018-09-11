@@ -2,6 +2,7 @@ import React from "react";
 import Root from "../../Root"
 import { mount } from "enzyme"
 import CardMaker from "../CardMaker/index.js"
+import ReduxForm from "../ReduxForm/index.js"
 
 let wrapped
 
@@ -35,10 +36,10 @@ describe("the text area", () => {
       target: { value: "Some text" }
     })
     wrapped.update()
-    wrapped.find("button").simulate("submit")
+    wrapped.find(ReduxForm).simulate("submit")
     wrapped.update()
     expect(wrapped.find("textarea").prop("value")).toEqual("")
     expect(wrapped.find("input").prop("value")).toEqual("")
-    expect(wrapped.find("select").prop("value")).toEqual("smiley")
+    expect(wrapped.find("select").prop("value")).toEqual("")
   })
 })

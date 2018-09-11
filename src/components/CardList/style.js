@@ -15,7 +15,7 @@ export const Container = styled.div`
   @media screen and (min-width:1200px) {
     max-height: 70vh;
     min-height: 70vh;
-    overflow: scroll;
+    overflow-Y: scroll;
     margin: 0 1vw;
   }
 `;
