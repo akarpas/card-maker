@@ -1,5 +1,12 @@
 import cardsReducer from '../cards'
-import { SAVE_CARD, DELETE_CARD, EDIT_CARD } from '../../actions/types'
+import {
+  SAVE_CARD,
+  DELETE_CARD,
+  EDIT_CARD,
+  GET_CARDS,
+  ERASE_CARDS
+} from '../../actions/types'
+import QuotesJSON from '../../assets/quotes.json'
 
 it('handles actions of type SAVE_CARD', () => {
   const card = {
@@ -61,6 +68,38 @@ it('handles actions of type EDIT_CARD', () => {
   }
   const newState = cardsReducer(initialCards, action)
   expect(newState[cardNumber].text).toEqual(payload.text)
+})
+
+it('handles actions of type GET_CARDS', () => {
+  const { cards } = QuotesJSON
+  const action = {
+    type: GET_CARDS,
+    payload: null
+  }
+  const newState = cardsReducer([], action)
+  expect(newState).toEqual(cards)
+})
+
+
+it('handles actions of type ERASE_CARDS', () => {
+  const initialCards = [
+    {
+      text: 'delete this card',
+      author: 'trash',
+      emoji: 'smiley'
+    },
+    {
+      text: 'delete this card',
+      author: 'trash',
+      emoji: 'smiley'
+    }
+  ]
+  const action = {
+    type: ERASE_CARDS,
+    payload: null
+  }
+  const newState = cardsReducer(initialCards, action)
+  expect(newState).toEqual([])
 })
 
 it('handles action with unknown type', () => {
