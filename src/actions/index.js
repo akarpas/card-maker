@@ -3,7 +3,8 @@ import {
   DELETE_CARD,
   EDIT_CARD,
   ERASE_CARDS,
-  GET_CARDS
+  GET_CARDS,
+  CARD_CREATED
 } from './types'
 
 export function saveCard(data) {
@@ -37,6 +38,13 @@ export function eraseCards(cardNumber) {
 export function getCards() {
   return {
     type: GET_CARDS,
+    payload: null
+  }
+}
+
+export function clearForm() {
+  return {
+    type: CARD_CREATED,
     payload: null
   }
 }
