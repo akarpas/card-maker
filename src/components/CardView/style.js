@@ -35,6 +35,7 @@ export const Controls = styled.div`
 
 export const Control = styled.div`
   cursor: pointer;
+  margin: 15px;
 `
 
 export const Card = styled.div`

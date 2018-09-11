@@ -6,11 +6,21 @@ import styled from "styled-components"
 `
 
  export const TextArea = styled.textarea`
+  resize: none;
   font-size: 20px;
+  height: 100px;
+  min-height: 80px;
+  width: 80vw;
+  border-radius: 10px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  @media screen and (min-width:1200px) {
+    width: 30vw;
+  }
 `
 
  export const StyledInput = styled.input`
   font-size: 20px;
+  border-radius: 10px;
 `
 
  export const StyledSelect = styled.select`
@@ -25,10 +35,20 @@ import styled from "styled-components"
   padding: 10px;
   margin: 20px;
   font-size: 30px;
+  border-radius: 10px;
+  &:hover {
+    background-color: lightgrey;
+  }
+  &:active {
+    background-color: grey;
+  }
 `
 
  export const DrawerButton = styled.img`
   cursor: pointer;
+  @media screen and (min-width:1200px) {
+    display: none
+  }
 `
 
  export const Container = styled.div`
@@ -40,6 +60,12 @@ import styled from "styled-components"
   justify-content: center;
   align-items: center;
   background-color: black;
+  @media screen and (min-width:1200px) {
+    max-height: 70vh;
+    min-height: 70vh;
+    width: 50%;
+    margin: 0 1vw;
+  }
 `
 
  export const Form = styled.form`
