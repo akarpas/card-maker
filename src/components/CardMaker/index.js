@@ -101,4 +101,4 @@ const mapStateToProps = (state) => {
   return { cards: state.cards }
 }
 
-export default connect(mapStateToProps)(CardMaker)
+export default connect(mapStateToProps, actions)(CardMaker)
