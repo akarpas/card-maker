@@ -38,11 +38,13 @@ class CardView extends Component {
     history.goBack()
   }
 
-  handleSave = event => {
+  handleSave = (event, showSave) => {
     event.stopPropagation()
-    this.props.editCard(this.state)
-    const { history } = this.props
-    history.goBack()
+    if(showSave) {
+      this.props.editCard(this.state)
+      const { history } = this.props
+      history.goBack()
+    }
   }
 
   handleChange = (event) => {
@@ -59,6 +61,7 @@ class CardView extends Component {
   render() {
     const { text, author, emoji, originalText } = this.state
     const showSave = originalText !== text
+    const saveStyle = !showSave ? { color: 'lightgrey', cursor: 'default' } : {}
     return (
       <ModalContainer>
         <ModalContent>
@@ -69,7 +72,7 @@ class CardView extends Component {
           </Card>
           <Controls>
             <Control onClick={this.handleDelete}>Delete</Control>
-            {showSave && <Control onClick={this.handleSave}>Save</Control>}
+            <Control style={saveStyle} onClick={(event) => this.handleSave(event, showSave)}>Save</Control>
             <Control onClick={this.back}>Close</Control>
           </Controls>
         </ModalContent>
