@@ -23,7 +23,7 @@ export const Container = styled.div`
   border: 1px solid white;
   margin: 1vh 0;
   width: 95%;
-  height: fit-content;
+  height: 98%;
   background-color: black;
   @media screen and (min-width:1000px) {
     width: 70%;
@@ -32,7 +32,7 @@ export const Container = styled.div`
     width: 50%;
   }
   @media screen and (min-width:1600px) {
-    width: 35%;
+    width: 32%;
   }
 `;
 
@@ -44,8 +44,10 @@ export const Cards = styled.div.attrs({
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  height: fit-content;
-  margin-bottom: 3000px;
+  min-height: 88%;
+  max-height: 90%;
+  overflow: visible;
+  margin-bottom: 2vh;
 `
 
 export const Line = styled.p`
@@ -66,7 +68,7 @@ export const Card = styled.div`
   align-items: center;
   cursor: pointer;
   padding: 20px;
-  height: 20vh;
+  height: 17vh;
   min-width: 12%;
   max-width: 12%;
   color: black;
