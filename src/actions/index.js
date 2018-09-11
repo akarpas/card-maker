@@ -30,7 +30,7 @@ export function editCard(cardNumber) {
 export function eraseCards(cardNumber) {
   return {
     type: ERASE_CARDS,
-    payload: cardNumber
+    payload: null
   }
 }
 
