@@ -4,6 +4,7 @@ import CardMaker from "./CardMaker/index"
 import CardTools from "./CardTools/index"
 import CardList from "./CardList/index"
 import CardView from "./CardView/index"
+import PrintView from "./PrintView/index"
 import styled from "styled-components"
 import {
   Switch,
@@ -47,6 +48,7 @@ export default class App extends Component {
         </CardContent>
         <Switch>
           <Route component={CardView} path="/card/:id"></Route>
+          <Route component={PrintView} path="/print"></Route>
         </Switch>
       </Wrapper>
     );
