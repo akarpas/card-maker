@@ -22,17 +22,32 @@ export const Container = styled.div`
   align-items: center;
   border: 1px solid white;
   margin: 1vh 0;
-  width: 95%;
+  width: 90%;
   height: 98%;
   background-color: black;
-  @media screen and (min-width:1000px) {
+  @media screen and (min-width:700px) {
+    width: 80%;
+  }
+  @media screen and (min-width:800px) {
     width: 70%;
+  }
+  @media screen and (min-width:1000px) {
+    width: 60%;
+  }
+  @media screen and (min-width:1100px) {
+    width: 55%;
   }
   @media screen and (min-width:1200px) {
     width: 50%;
   }
+  @media screen and (min-width:1400px) {
+    width: 40%;
+  }
   @media screen and (min-width:1600px) {
-    width: 32%;
+    width: 30%;
+  }
+  @media screen and (min-width:2000px) {
+    width: 25%;
   }
 `;
 
@@ -44,10 +59,12 @@ export const Cards = styled.div.attrs({
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  min-height: 88%;
   max-height: 90%;
   overflow: visible;
   margin-bottom: 2vh;
+  @media screen and (min-width:1400px) {
+    width: 90%;
+  }
 `
 
 export const Line = styled.p`
@@ -67,22 +84,34 @@ export const Card = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  padding: 20px;
-  height: 17vh;
-  min-width: 12%;
-  max-width: 12%;
+  padding: 15px;
+  height: 12vh;
+  min-width: 10%;
+  max-width: 10%;
   color: black;
   background-color: white;
   border: 1px solid black;
+  font-size: 10px;
+  @media screen and (min-width:550px) {
+    min-width: 12%;
+    max-width: 12%;
+  }
+  @media screen and (min-width:900px) {
+    font-size: 12px;
+  }
+  @media screen and (min-width:1200px) {
+    height: 18vh;
+    font-size: 12px;
+  }
   @media screen and (max-height:600px) {
     height: 13vh;
-    font-size: 15px;
+    font-size: 12px;
   }
 `;
 
 export const Button = styled.img`
   cursor: pointer;
-  height: 35px;
+  height: 20px;
   margin: 0 25px;
   border-radius: 15px;
   background-color: white;
@@ -93,6 +122,12 @@ export const Button = styled.img`
   }
   &:active {
     background-color: grey;
+  }
+  @media screen and (min-width:1400px) {
+    height: 30px;
+  }
+  @media screen and (min-width:1600px) {
+    height: 35px;
   }
 `
 

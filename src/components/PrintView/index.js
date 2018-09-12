@@ -7,15 +7,26 @@ import html2canvas from "html2canvas"
 import jsPDF from "jspdf"
 
 class PrintView extends Component {
+  state = {
+    width: window.innerWidth
+  }
+  componentDidMount() {
+    window.addEventListener('resize', this.handleDimensions)
+  }
   print = () => {
+    const { width } = this.state
     const input = document.getElementById('divToPrint');
-    html2canvas(input)
+    html2canvas(input, width > 1600 ? { scale: 1 } : { scale: 1.4} )
       .then((canvas) => {
         const imgData = canvas.toDataURL('image/png');
         const pdf = new jsPDF();
         pdf.addImage(imgData, 'JPEG', 0, 0);
         pdf.save("download.pdf");
       });
+  }
+
+  handleDimensions = () => {
+    this.setState({ width: window.innerWidth })
   }
 
   back = event => {
@@ -26,6 +37,8 @@ class PrintView extends Component {
 
   render() {
     const { cards } = this.props
+    const { width } = this.state
+    console.log(width)
     return (
       <Overlay>
         <Container>
