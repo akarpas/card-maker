@@ -36,10 +36,10 @@ describe("the text area", () => {
       target: { value: "Some text" }
     })
     wrapped.update()
-    wrapped.find(ReduxForm).simulate("submit")
+    wrapped.find('form').simulate("submit")
     wrapped.update()
     expect(wrapped.find("textarea").prop("value")).toEqual("")
     expect(wrapped.find("input").prop("value")).toEqual("")
-    expect(wrapped.find("select").prop("value")).toEqual("")
+    expect(wrapped.find("select").prop("value")).toEqual("smiley")
   })
 })
