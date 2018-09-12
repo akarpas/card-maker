@@ -23,6 +23,20 @@ class CardMaker extends Component {
     open: true
   }
 
+  componentDidMount() {
+    window.addEventListener('resize', this.updateDimensions)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize')
+  }
+
+  updateDimensions = () => {
+    if (window.innerWidth > 1199) {
+      this.setState({ open: true })
+    }
+  }
+
   handleSubmit = (event) => {
     event.preventDefault()
     const { text, author, emoji } = this.state

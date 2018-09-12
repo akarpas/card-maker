@@ -11,7 +11,7 @@ class PrintView extends Component {
     width: window.innerWidth
   }
   componentDidMount() {
-    window.addEventListener('resize', this.handleDimensions)
+    window.addEventListener('resize', this.updateDimensions)
   }
   print = () => {
     const { width } = this.state
@@ -25,7 +25,7 @@ class PrintView extends Component {
       });
   }
 
-  handleDimensions = () => {
+  updateDimensions = () => {
     this.setState({ width: window.innerWidth })
   }
 
@@ -37,8 +37,7 @@ class PrintView extends Component {
 
   render() {
     const { cards } = this.props
-    const { width } = this.state
-    console.log(width)
+
     return (
       <Overlay>
         <Container>
