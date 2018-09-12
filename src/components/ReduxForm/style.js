@@ -30,6 +30,64 @@ export const StyledSelect = styled(Field)`
   border-radius: 0;
 `
 
+export const Radios = styled.div`
+  background-color: white;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1vh 1vw;
+  border-radius: 5px;
+  max-height: 60px;
+  min-height: 50px;
+  width: 35vw;
+  @media screen and (min-width:1200px) {
+    width: 10vw;
+  }
+`
+
+export const RadioInput = styled(Field)`
+  &:checked + label {
+    border: 1px solid grey;
+    background-color: lightgrey;
+  }
+`
+
+export const RadioLabelA = styled.label.attrs({
+  htmlFor: 'smiley'
+})`
+  padding-top: 25px;
+  border: none;
+  border-radius: 5px;
+`
+
+export const RadioLabelB = styled.label.attrs({
+  htmlFor: 'angry'
+})`
+  padding-top: 25px;
+  border: none;
+  border-radius: 5px;
+`
+
+export const RadioLabelC = styled.label.attrs({
+  htmlFor: 'sad'
+})`
+  padding-top: 25px;
+  border: none;
+  border-radius: 5px;
+`
+
+export const RadioButton = styled.div`
+  & input[type="radio"] {
+    display: none;
+  }
+`
+
+export const EmojiIcon = styled.img`
+  height: 2em;
+  padding: 3px;
+`
+
 export const Button = styled.button`
   cursor: pointer;
   border: 2px solid white;
