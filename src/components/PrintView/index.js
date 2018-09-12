@@ -37,8 +37,7 @@ class PrintView extends Component {
 
   render() {
     const { cards } = this.props
-    const { width } = this.state
-    console.log(width)
+
     return (
       <Overlay>
         <Container>

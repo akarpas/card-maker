@@ -64,7 +64,6 @@ class CardMaker extends Component {
 
   render() {
     const { open } = this.state
-    console.warn(open)
     const { cards } = this.props
     const isLimit = cards.length >= 20
     return (
