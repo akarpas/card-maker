@@ -47,6 +47,7 @@ export const Radios = styled.div`
 `
 
 export const RadioInput = styled(Field)`
+  cursor: pointer;
   &:checked + label {
     border: 1px solid grey;
     background-color: lightgrey;
@@ -78,12 +79,14 @@ export const RadioLabelC = styled.label.attrs({
 `
 
 export const RadioButton = styled.div`
+  cursor: pointer;
   & input[type="radio"] {
     display: none;
   }
 `
 
 export const EmojiIcon = styled.img`
+  cursor: pointer;
   height: 2em;
   padding: 3px;
 `
