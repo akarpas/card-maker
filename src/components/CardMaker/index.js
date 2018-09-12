@@ -1,10 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux"
-import ReduxForm from "../ReduxForm"
 import { 
   Container,
-  DrawerButton
+  DrawerButton,
+  TextArea,
+  Label,
+  StyledInput,
+  StyledSelect,
+  Form,
+  Button,
+  Notice
 } from "./style"
+import ExpandLessIcon from "../../assets/expandLess.png"
 import ExpandMoreIcon from "../../assets/expandMore.png"
 import * as actions from "../../actions"
 
@@ -12,57 +19,86 @@ class CardMaker extends Component {
   state = {
     text: "",
     author: "",
-    emoji: "",
+    emoji: "smiley",
     open: true
   }
 
-  handleSubmit = values => {
-    if (!values.emoji) {
-      values.emoji = "smiley"
-    }
-    const { text, author, emoji } = values
+  handleSubmit = (event) => {
+    event.preventDefault()
+    const { text, author, emoji } = this.state
     this.props.saveCard({
       text,
       author,
       emoji
     })
-    this.props.clearForm()
-    // this.props.clearForm()
     this.setState({
       text: "",
       author: "",
-      emoji: ""
+      emoji: "smiley"
     })
   }
 
-  handleChange = event => {
+  handleChange = (event) => {
     const { name, value } = event.target
     this.setState({ [name]: value })
   }
 
-  handleClick = () => {
+  handleClick = (event) => {
     const { open } = this.state
     this.setState({ open: !open })
   }
 
   render() {
-    const { open, text, author, emoji } = this.state
-
+    const { open } = this.state
+    const { cards } = this.props
+    const isLimit = cards.length >= 20
     return (
       <Container>
         {!open && <DrawerButton src={ExpandMoreIcon} onClick={this.handleClick}/>}
         {open && 
-          <ReduxForm
-            onSubmit={this.handleSubmit}
-            handleClick={this.handleClick}
-            text={text}
-            author={author}
-            emoji={emoji}
-          />
+          <Form id="form" onSubmit={this.handleSubmit}>
+            <Label>Card Text</Label>
+            <TextArea
+              name="text"
+              placeholder="Add text to your card"
+              value={this.state.text}
+              onChange={this.handleChange}
+              required
+            />
+            <Label>Author</Label>
+            <StyledInput
+              name="author"
+              component="input"
+              value={this.state.author}
+              onChange={this.handleChange}
+              placeholder="Name"
+              required
+            />
+            <Label>Mood</Label>
+            <StyledSelect
+              name="emoji"
+              required
+              component="select"
+              onChange={this.handleChange}
+              value={this.state.emoji}
+            >
+              <option value="smiley">Smiley</option>
+              <option value="angry">Angry</option>
+              <option value="sad">Sad</option>
+            </StyledSelect>
+            {!isLimit ?
+              <Button type="submit"> Create </Button> :
+              <Notice> Up to 20 Cards at a time! </Notice>}
+            <DrawerButton src={ExpandLessIcon} onClick={this.handleClick}/>
+          </Form>
         }
       </Container>
     );
   }
 }
 
-export default connect(null, actions)(CardMaker)
+const mapStateToProps = (state) => {
+  return { cards: state.cards }
+}
+
+export default connect(mapStateToProps, actions)(CardMaker)
