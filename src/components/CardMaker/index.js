@@ -45,13 +45,17 @@ class CardMaker extends Component {
     this.setState({
       text: "",
       author: "",
-      emoji: ""
+      emoji: "smiley"
     })
   }
 
   handleClick = (event) => {
     const { open } = this.state
     this.setState({ open: !open })
+  }
+
+  setChecked = (e, emoji) => {
+    this.setState({ emoji })
   }
 
   render() {
@@ -69,6 +73,7 @@ class CardMaker extends Component {
             author={author}
             emoji={emoji}
             limit={isLimit}
+            setChecked={this.setChecked}
           />
         }
       </Container>
