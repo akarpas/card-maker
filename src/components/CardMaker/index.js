@@ -21,7 +21,7 @@ class CardMaker extends Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize')
+    window.removeEventListener('resize', null)
   }
 
   updateDimensions = () => {
