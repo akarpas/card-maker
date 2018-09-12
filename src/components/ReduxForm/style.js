@@ -59,3 +59,9 @@ export const Form = styled.form`
   align-items: center;
   padding: 20px;
 `
+
+export const Notice = styled.p`
+  font-size: 2em;
+  color: #C6A687;
+  text-align: center;
+`

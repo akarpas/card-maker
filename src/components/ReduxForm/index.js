@@ -6,13 +6,14 @@ import {
   StyledInput,
   StyledSelect,
   Form,
-  Button
+  Button,
+  Notice
 } from "./style"
 import { reduxForm } from "redux-form"
 import ExpandLessIcon from "../../assets/expandLess.png"
 
 let ReduxForm = props => {
-  const { text, author, emoji, handleClick, handleSubmit } = props
+  const { text, author, emoji, handleClick, handleSubmit, limit } = props
   return (
     <Form id="form" onSubmit={handleSubmit}>
       <Label>Card Text</Label>
@@ -21,7 +22,6 @@ let ReduxForm = props => {
         component="textarea"
         placeholder="Add text to your card"
         value={text}
-        // onChange={this.handleChange}
         required
       />
       <Label>Author</Label>
@@ -43,7 +43,9 @@ let ReduxForm = props => {
         <option value="angry">Angry</option>
         <option value="sad">Sad</option>
       </StyledSelect>
-      <Button type="submit"> Create </Button>
+      {!limit ?
+        <Button type="submit"> Create </Button> :
+        <Notice> Up to 20 Cards at a time! </Notice>}
       <DrawerButton src={ExpandLessIcon} onClick={handleClick}/>
     </Form>
   );
