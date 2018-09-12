@@ -75,8 +75,3 @@ import styled from "styled-components"
   align-items: center;
   padding: 20px;
 `
-
-export const Notice = styled.p`
-  font-size: 2em;
-  color: #C6A687;
-`
