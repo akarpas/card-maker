@@ -41,6 +41,7 @@ let ReduxForm = props => {
         value={author}
         placeholder="Name"
         required
+        type="text"
       />
       <Label>Mood</Label>
       <Radios>
