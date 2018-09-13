@@ -1,6 +1,11 @@
-// TO DO: Consider moving / using
-import { combineReducers } from "redux";
+import { createStore, combineReducers } from 'redux'
+import reducers from "../src/reducers"
 
-const store = combineReducers({});
+const combinedReducers = combineReducers(reducers)
 
-export default store;
+export default function(initialState) {
+  const store = createStore(combinedReducers, initialState)
+
+  return store
+}
+
