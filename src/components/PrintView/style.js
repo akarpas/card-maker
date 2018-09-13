@@ -42,9 +42,6 @@ export const Container = styled.div`
   @media screen and (min-width:1600px) {
     width: 30%;
   }
-  @media screen and (min-width:2000px) {
-    width: 420px;
-  }
 `;
 
 export const Cards = styled.div.attrs({
