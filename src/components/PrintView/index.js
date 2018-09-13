@@ -69,9 +69,9 @@ class PrintView extends Component {
           </Buttons>
           <Cards id="divToPrint">
           {cards &&
-            _.map(cardPages, page => {
+            _.map(cardPages, (page, index) => {
               return (
-                <CardPage>
+                <CardPage key={`${index}-cardPage`}>
                 {_.map(page, (card, index) => {
                   const cardNumber = cards.length - 1 - index
                   return (
