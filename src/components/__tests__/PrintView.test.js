@@ -47,7 +47,6 @@ it("includes a divToPrint div", () => {
 });
 
 it("creates two cards", () => {
-  console.log(wrapped.debug())
   expect(wrapped.find("p").length).toEqual(2)
   expect(wrapped.render().text()).toContain("Card 1")
   expect(wrapped.render().text()).toContain("Card 2")
