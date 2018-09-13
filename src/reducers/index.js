@@ -1,5 +1,7 @@
-import { combineReducers } from "redux"
-import cardsReducer from "./cards"
-import formsReducer from "./forms"
+import cards from './cards'
+import form from './form'
 
-export default combineReducers({ cards: cardsReducer, form: formsReducer })
+export default {
+  cards,
+  form
+}
