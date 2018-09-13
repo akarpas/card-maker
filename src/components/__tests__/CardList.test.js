@@ -8,7 +8,7 @@ let wrapped
 
 beforeEach(() => {
   const initialState = {
-    cards: [
+    cards: { cardList: [
       {
         "text": "Card 1",
         "author": "one",
@@ -19,7 +19,7 @@ beforeEach(() => {
         "author": "two",
         "emoji": "angry"
       }
-    ]
+    ]}
   }
   wrapped = mount(
     <Root initialState={initialState}>

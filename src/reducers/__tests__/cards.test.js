@@ -18,30 +18,32 @@ it('handles actions of type SAVE_CARD', () => {
     type: SAVE_CARD,
     payload: card
   }
-  const newState = cardsReducer([], action)
-  expect(newState).toEqual([card])
+  const newState = cardsReducer({ cardList: [] }, action)
+  expect(newState).toEqual({ cardList: [card] })
 })
 
 it('handles actions of type DELETE_CARD', () => {
   const cardNumber = 1
-  const initialCards = [
-    {
-      text: 'keep this card',
-      author: 'important',
-      emoji: 'smiley'
-    },
-    {
-      text: 'delete this card',
-      author: 'trash',
-      emoji: 'smiley'
-    }
-  ]
+  const initialCards = {
+    cardList: [
+      {
+        text: 'keep this card',
+        author: 'important',
+        emoji: 'smiley'
+      },
+      {
+        text: 'delete this card',
+        author: 'trash',
+        emoji: 'smiley'
+      }
+    ]
+  }
   const action = {
     type: DELETE_CARD,
     payload: cardNumber
   }
   const newState = cardsReducer(initialCards, action)
-  expect(newState).toEqual([initialCards[0]])
+  expect(newState).toEqual({ cardList: [initialCards.cardList[0]] })
 })
 
 it('handles actions of type EDIT_CARD', () => {
@@ -50,24 +52,26 @@ it('handles actions of type EDIT_CARD', () => {
     cardNumber,
     text: 'card has been edited'
   }
-  const initialCards = [
-    {
-      text: 'keep this card',
-      author: 'important',
-      emoji: 'smiley'
-    },
-    {
-      text: 'edit this card',
-      author: 'edit',
-      emoji: 'smiley'
-    }
-  ]
+  const initialCards = {
+    cardList: [
+      {
+        text: 'keep this card',
+        author: 'important',
+        emoji: 'smiley'
+      },
+      {
+        text: 'edit this card',
+        author: 'edit',
+        emoji: 'smiley'
+      }
+    ]
+  }
   const action = {
     type: EDIT_CARD,
     payload
   }
   const newState = cardsReducer(initialCards, action)
-  expect(newState[cardNumber].text).toEqual(payload.text)
+  expect(newState.cardList[cardNumber].text).toEqual(payload.text)
 })
 
 it('handles actions of type GET_CARDS', () => {
@@ -77,29 +81,31 @@ it('handles actions of type GET_CARDS', () => {
     payload: null
   }
   const newState = cardsReducer([], action)
-  expect(newState).toEqual(cards)
+  expect(newState.cardList).toEqual(cards)
 })
 
 
 it('handles actions of type ERASE_CARDS', () => {
-  const initialCards = [
-    {
-      text: 'delete this card',
-      author: 'trash',
-      emoji: 'smiley'
-    },
-    {
-      text: 'delete this card',
-      author: 'trash',
-      emoji: 'smiley'
-    }
-  ]
+  const initialCards = {
+    cardList: [
+      {
+        text: 'delete this card',
+        author: 'trash',
+        emoji: 'smiley'
+      },
+      {
+        text: 'delete this card',
+        author: 'trash',
+        emoji: 'smiley'
+      }
+    ]
+  }
   const action = {
     type: ERASE_CARDS,
     payload: null
   }
   const newState = cardsReducer(initialCards, action)
-  expect(newState).toEqual([])
+  expect(newState.cardList).toEqual([])
 })
 
 it('handles action with unknown type', () => {
