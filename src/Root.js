@@ -2,9 +2,9 @@ import React from "react"
 import { Provider } from "react-redux"
 import createStore from './store'
 
-export default ({ children }) => {
+export default ({ children, initialState }) => {
   return (
-    <Provider store={createStore({})}>
+    <Provider store={createStore(initialState)}>
       {children}
     </Provider>
   )

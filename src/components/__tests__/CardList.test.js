@@ -3,23 +3,26 @@ import { BrowserRouter, Link } from "react-router-dom";
 import Root from "../../Root"
 import { mount } from "enzyme"
 import CardList from "../CardList/index.js"
+import cardsReducer from '../../reducers/cards'
 
 let wrapped
 
 beforeEach(() => {
   const initialState = {
-    cards: { cardList: [
-      {
-        "text": "Card 1",
-        "author": "one",
-        "emoji": "smiley"
-      },
-      {
-        "text": "Card 2",
-        "author": "two",
-        "emoji": "angry"
-      }
-    ]}
+    cards: {
+      cardList: [
+        {
+          "text": "Card 1",
+          "author": "one",
+          "emoji": "smiley"
+        },
+        {
+          "text": "Card 2",
+          "author": "two",
+          "emoji": "angry"
+        }
+      ]
+    }
   }
   wrapped = mount(
     <Root initialState={initialState}>
