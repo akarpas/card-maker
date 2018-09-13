@@ -22,7 +22,7 @@ import AngryIcon from "../../assets/angry.png"
 import SadIcon from "../../assets/sad.png"
 
 let ReduxForm = props => {
-  const { text, author, emoji, handleClick, handleSubmit, limit, setChecked } = props
+  const { text, author, emoji, handleClick, handleSubmit, setChecked } = props
 
   return (
     <Form id="form" onSubmit={handleSubmit}>
@@ -82,9 +82,7 @@ let ReduxForm = props => {
           <RadioLabelC><EmojiIcon src={SadIcon}/></RadioLabelC>
         </RadioButton>
       </Radios>
-      {!limit ?
-        <Button type="submit"> Create </Button> :
-        <Notice> Up to 20 Cards at a time! </Notice>}
+      <Button type="submit"> Create </Button> :
       <DrawerButton src={ExpandLessIcon} onClick={handleClick}/>
     </Form>
   );
