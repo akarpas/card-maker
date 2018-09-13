@@ -8,7 +8,7 @@ export const Overlay = styled.div`
   flex-flow: column;
   align-items: center;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   background-color: rgba(0,0,0,0.9);
 `
 
@@ -20,7 +20,6 @@ export const Container = styled.div`
   border: 1px solid white;
   margin: 1vh 0;
   width: 90%;
-  height: 98%;
   background-color: black;
   @media screen and (min-width:700px) {
     width: 80%;
@@ -44,23 +43,21 @@ export const Container = styled.div`
     width: 30%;
   }
   @media screen and (min-width:2000px) {
-    width: 25%;
+    width: 420px;
   }
 `;
 
 export const Cards = styled.div.attrs({
   className: "cards",
 })`
-  width: 100%;
+  width: 440px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  max-height: 90%;
   overflow: visible;
-  margin-bottom: 2vh;
   @media screen and (min-width:1400px) {
-    width: 90%;
+    width: 440px;
   }
 `
 
@@ -82,29 +79,40 @@ export const Card = styled.div`
   align-items: center;
   cursor: pointer;
   padding: 15px;
-  height: 12vh;
-  min-width: 10%;
-  max-width: 10%;
+  height: 115px;
+  width: 100px;
   color: black;
   background-color: white;
   border: 1px solid black;
-  font-size: 10px;
+  font-size: 7px;
   @media screen and (min-width:550px) {
-    min-width: 12%;
-    max-width: 12%;
+    width: 100px;
   }
   @media screen and (min-width:900px) {
-    font-size: 12px;
+    font-size: 7px;
   }
   @media screen and (min-width:1200px) {
-    height: 18vh;
-    font-size: 12px;
+    height: 115px;
+    font-size: 8px;
   }
   @media screen and (max-height:600px) {
-    height: 13vh;
-    font-size: 12px;
+    height: 115px;
+    font-size: 9px;
   }
 `;
+
+export const CardPage = styled.div`
+  height: 590px;
+  width: 400px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  overflow: visible;
+  padding: 5px 5px;
+  margin: 10px 0;
+  align-content: start;
+`
 
 export const Button = styled.img`
   cursor: pointer;
