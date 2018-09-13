@@ -1,9 +1,10 @@
-import { SAVE_CARD, DELETE_CARD, EDIT_CARD, ERASE_CARDS, GET_CARDS } from "../actions/types"
+import { SAVE_CARD, DELETE_CARD, EDIT_CARD, ERASE_CARDS, GET_CARDS, FETCH_CARDS, CARDS_LOADING } from "../actions/types"
 import CardsJSON from "../assets/quotes.json"
 
 const { cards } = CardsJSON
 const INITIAL_STATE = {
-  cardList: cards
+  cardList: cards,
+  cardsLoading: false
 }
 
 const saveCard = (state, data) => {
@@ -32,6 +33,13 @@ const getCards = state => {
   return { ...state, cardList: cards }
 }
 
+const setLoading = state => {
+  return { ...state, cardsLoading: true }
+}
+const fetchCards = (state, data) => {
+  return { ...state, cardsLoading: false, cardList: data }
+}
+
 export default function(state = INITIAL_STATE, action) {
   switch(action.type) {
     case SAVE_CARD:
@@ -44,6 +52,10 @@ export default function(state = INITIAL_STATE, action) {
       return eraseCards(state)
     case GET_CARDS:
       return getCards(state)
+    case CARDS_LOADING:
+      return setLoading(state)
+    case FETCH_CARDS:
+      return fetchCards(state, action.payload)
     default:
       return state
   }
