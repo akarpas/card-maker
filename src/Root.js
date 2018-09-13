@@ -1,11 +1,10 @@
 import React from "react"
 import { Provider } from "react-redux"
-import { createStore } from "redux"
-import reducers from "./reducers"
+import createStore from './store'
 
 export default ({ children, initialState }) => {
   return (
-    <Provider store={createStore(reducers, initialState)}>
+    <Provider store={createStore(initialState)}>
       {children}
     </Provider>
   )
