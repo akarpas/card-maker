@@ -60,7 +60,6 @@ class CardMaker extends Component {
 
   render() {
     const { open, text, author, emoji } = this.state
-
     return (
       <Container>
         {!open && <DrawerButton src={ExpandMoreIcon} onClick={this.handleClick}/>}
