@@ -24,12 +24,6 @@ export const StyledInput = styled(Field)`
   border-radius: 10px;
 `
 
-export const StyledSelect = styled(Field)`
-  font-size: 20px;
-  background-color: white;
-  border-radius: 0;
-`
-
 export const Radios = styled.div`
   background-color: white;
   display: flex;
@@ -119,10 +113,4 @@ export const Form = styled.form`
   flex-flow: column;
   align-items: center;
   padding: 20px;
-`
-
-export const Notice = styled.p`
-  font-size: 2em;
-  color: #C6A687;
-  text-align: center;
 `
