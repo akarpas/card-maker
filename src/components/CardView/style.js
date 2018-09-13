@@ -71,4 +71,9 @@ export const AuthorText = styled.div`
 
 export const Emoji = styled.div`
   color: black;
+  padding: 20px;
+`
+
+export const EmojiIcon = styled.img`
+  height: 4em;
 `

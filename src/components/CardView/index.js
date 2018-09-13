@@ -8,9 +8,14 @@ import {
   Control,
   CardText,
   AuthorText,
-  Emoji
+  Emoji,
+  EmojiIcon
 } from "./style.js"
 import * as actions from "../../actions"
+import SmileyIcon from "../../assets/laugh.png"
+import AngryIcon from "../../assets/angry.png"
+import SadIcon from "../../assets/sad.png"
+import _ from "lodash"
 
 class CardView extends Component {
   state = {
@@ -60,6 +65,12 @@ class CardView extends Component {
 
   render() {
     const { text, author, emoji, originalText } = this.state
+    const icons = {
+      SmileyIcon,
+      AngryIcon,
+      SadIcon
+    }
+    const icon = icons[`${_.startCase(emoji)}Icon`]
     const showSave = originalText !== text
     const saveStyle = !showSave ? { color: 'lightgrey', cursor: 'default' } : {}
     return (
@@ -68,7 +79,7 @@ class CardView extends Component {
           <Card>
             <CardText value={text} onChange={this.handleChange}/>
             <AuthorText>Author: {author}</AuthorText>
-            <Emoji>Mood: {emoji}</Emoji>
+            <Emoji><EmojiIcon src={icon} /></Emoji>
           </Card>
           <Controls>
             <Control onClick={this.handleDelete}>Delete</Control>

@@ -13,6 +13,10 @@ class PrintView extends Component {
   componentDidMount() {
     window.addEventListener('resize', this.updateDimensions)
   }
+
+  componentWillUnmount() {
+    window.addEventListener('resize', null)
+  }
   print = () => {
     const { width } = this.state
     const input = document.getElementById('divToPrint');
