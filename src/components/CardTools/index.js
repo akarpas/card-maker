@@ -21,7 +21,7 @@ class CardTools extends Component {
 
   render() {
     const { cards } = this.props
-    const cardsJson = {...cards}
+    const cardsJson = { ...cards }
 
     const data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(cardsJson))
 
@@ -41,7 +41,7 @@ class CardTools extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return { cards: state.cards }
+  return { cards: state.cards.cardList }
 }
 
 export default connect(mapStateToProps, actions)(CardTools)

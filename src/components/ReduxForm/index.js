@@ -6,7 +6,6 @@ import {
   StyledInput,
   Form,
   Button,
-  Notice,
   Radios,
   RadioInput,
   RadioButton,
@@ -82,7 +81,7 @@ let ReduxForm = props => {
           <RadioLabelC><EmojiIcon src={SadIcon}/></RadioLabelC>
         </RadioButton>
       </Radios>
-      <Button type="submit"> Create </Button> :
+      <Button type="submit"> Create </Button>
       <DrawerButton src={ExpandLessIcon} onClick={handleClick}/>
     </Form>
   );
