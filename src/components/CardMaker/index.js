@@ -60,8 +60,7 @@ class CardMaker extends Component {
 
   render() {
     const { open, text, author, emoji } = this.state
-    const { cards } = this.props
-    const isLimit = cards.length >= 20
+
     return (
       <Container>
         {!open && <DrawerButton src={ExpandMoreIcon} onClick={this.handleClick}/>}
@@ -72,7 +71,6 @@ class CardMaker extends Component {
             text={text}
             author={author}
             emoji={emoji}
-            limit={isLimit}
             setChecked={this.setChecked}
           />
         }
@@ -81,8 +79,4 @@ class CardMaker extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return { cards: state.cards }
-}
-
-export default connect(mapStateToProps, actions)(CardMaker)
+export default connect(null, actions)(CardMaker)
