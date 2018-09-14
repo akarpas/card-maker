@@ -61,7 +61,7 @@ export const CardText = styled.textarea`
   border: 1px solid rgba(0,0,0,0.5);
   text-align: center;
   width: 90%;
-  margin: 2em 0;
+  margin: 0 0 2em 0;
   height: 30vh;
 `
 
@@ -76,4 +76,9 @@ export const Emoji = styled.div`
 
 export const EmojiIcon = styled.img`
   height: 4em;
+`
+
+export const Label = styled.label`
+  color: rgba(0,0,0,0.5);
+  font-style: italic;
 `

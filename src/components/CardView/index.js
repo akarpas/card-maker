@@ -9,7 +9,8 @@ import {
   CardText,
   AuthorText,
   Emoji,
-  EmojiIcon
+  EmojiIcon,
+  Label
 } from "./style.js"
 import * as actions from "../../actions"
 import SmileyIcon from "../../assets/laugh.png"
@@ -77,6 +78,7 @@ class CardView extends Component {
       <ModalContainer>
         <ModalContent>
           <Card>
+            <Label> You can modify the text here: </Label>
             <CardText value={text} onChange={this.handleChange}/>
             <AuthorText>Author: {author}</AuthorText>
             <Emoji><EmojiIcon src={icon} /></Emoji>
