@@ -1,0 +1,8 @@
+export const SAVE_CARD = 'save_card'
+export const DELETE_CARD = 'delete_card'
+export const EDIT_CARD = 'edit_card'
+export const ERASE_CARDS = 'erase_cards'
+export const GET_CARDS = 'get_cards'
+export const FETCH_CARDS = 'fetch_cards'
+export const CARD_CREATED = 'card_created'
+export const CARDS_LOADING = 'cards_loading'

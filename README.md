@@ -1,41 +1,29 @@
 # Colvin Frontend Challenge
 
-Welcome to Colvin Code Challenge!
+## To run the app (localhost:3000)
+```npm install```
 
-You can use this boilerplate to do the test (for example, forking this repository). After finish the test, please, send us an email to **frontend@thecolvinco.com** with the repository link. If you have any question, don't hesitate to contact us.
+```npm start```
 
-# Exercise
+## To test the app
+```npm install``` (if not done already)
 
-## Card game maker
+```npm test```
 
-Your mission is to build a card game maker (simple cards, invent your owns or use existing ones as [Cards Against Humanity](https://cardsagainsthumanity.com/)). The app must be able to do:
+## To build the app
+```npm run build```
 
-- Show a detailed view of a card
-- Show a card list of your game
-- Add a new card
-- Edit an existing card
+## Deployed URL:
+[Click Here](https://thecardmaker.netlify.com/)
 
-We would love to see each of these features implemented but you are free to add as many features as you want. Some suggestions:
+## Card Maker Tools:
+![Alt text](./src/assets/reload.png?raw=true) - Clear all cards
 
-- Export to PDF
-- Import/Export to JSON
-- Fetch cards from a remote path (Git...)
+![Alt text](./src/assets/load.png?raw=true) - Load cached cards
 
-# Technology
+![Alt text](./src/assets/export.png?raw=true) - Export to JSON
 
-Our stack is composed by the following technologies:
+![Alt text](./src/assets/save.png?raw=true) - Save to PDF
 
-- React + Redux
-- Redux-Saga
-- Styled-Components
-- Redux Form
-- React Router
+![Alt text](./src/assets/download.png?raw=true) - Fetch from Remote URL (GitHub)
 
-Feel free to use whatever stack you want. (React is a must 😬)
-
-# Bonus points
-
-- You follow clean coding practices.
-- You test the app.
-- You use git properly.
-- We love easter eggs 😎
