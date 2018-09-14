@@ -1,5 +1,5 @@
 import { SAVE_CARD, DELETE_CARD, EDIT_CARD, ERASE_CARDS, GET_CARDS, FETCH_CARDS, CARDS_LOADING } from "../actions/types"
-import CardsJSON from "../assets/quotes.json"
+import CardsJSON from "../assets/cards.json"
 
 const { cards } = CardsJSON
 const INITIAL_STATE = {

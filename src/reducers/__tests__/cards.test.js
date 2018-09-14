@@ -6,7 +6,7 @@ import {
   GET_CARDS,
   ERASE_CARDS
 } from '../../actions/types'
-import QuotesJSON from '../../assets/quotes.json'
+import CardsJSON from '../../assets/cards.json'
 
 it('handles actions of type SAVE_CARD', () => {
   const card = {
@@ -75,7 +75,7 @@ it('handles actions of type EDIT_CARD', () => {
 })
 
 it('handles actions of type GET_CARDS', () => {
-  const { cards } = QuotesJSON
+  const { cards } = CardsJSON
   const action = {
     type: GET_CARDS,
     payload: null
