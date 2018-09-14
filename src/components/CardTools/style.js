@@ -15,12 +15,15 @@ export const Container = styled.label`
 export const Button = styled.img`
   cursor: pointer;
   height: 35px;
-  margin: 0 25px;
+  margin: 0 10px;
   border-radius: 15px;
   &:hover {
     background-color: lightgrey;
   }
   &:active {
     background-color: grey;
+  }
+  @media screen and (min-width:800px) {
+    margin: 0 25px;
   }
 `
