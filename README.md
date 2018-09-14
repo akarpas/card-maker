@@ -2,9 +2,12 @@
 
 ## To run the app (localhost:3000)
 ```npm install```
+
 ```npm start```
 
 ## To test the app
+```npm install``` (if not done already)
+
 ```npm test```
 
 ## To build the app
