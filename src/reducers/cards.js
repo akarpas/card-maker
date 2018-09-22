@@ -13,7 +13,7 @@ const saveCard = (state, data) => {
 
 const deleteCard = (state, data) => {
   if (state.cardList.length === 1) {
-    return ([])
+    return { ...state, cardList: [] }
   }
   state.cardList.splice(data.cardNumber, 1)
   return { ...state, cardList: [ ...state.cardList ] }
