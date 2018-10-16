@@ -1,4 +1,4 @@
-# Colvin Frontend Challenge
+# The Card Maker
 
 ## To run the app (localhost:3000)
 ```npm install```
